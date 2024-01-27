@@ -361,7 +361,6 @@ public class ClientController implements Initializable {
     }
 
     public void setEmojis(){
-//        List<String> emojiUnicodes = Arrays.asList(
             List<String> emojiUnicodes= Arrays.asList(
                 "\u263A", "\uD83D\uDE00", "\uD83D\uDE01", "\uD83D\uDE02", "\uD83D\uDE03",
                 "\uD83D\uDE04", "\uD83D\uDE05", "\uD83D\uDE06", "\uD83D\uDE07", "\uD83D\uDE08",
