@@ -1,6 +1,6 @@
 package lk.ijse;
 
-import lk.ijse.controller.ServerController;
+import lk.ijse.controller.ClientHandllerController;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ServerInitializer  {
-    private static ArrayList<ServerController> clients = new ArrayList<>();
+    private static ArrayList<ClientHandllerController> clients = new ArrayList<>();
     private static Socket socket;
     public static void main(String[] args) {
         System.out.println("Hello" + clients);
@@ -19,9 +19,9 @@ public class ServerInitializer  {
                 socket = serverSocket.accept();
                 System.out.println("connect");
 
-                ServerController serverController = new ServerController(socket,clients);
-                Thread clientThread = new Thread(serverController);
-                clients.add(serverController);
+                ClientHandllerController clientHandllerController = new ClientHandllerController(socket,clients);
+                Thread clientThread = new Thread(clientHandllerController);
+                clients.add(clientHandllerController);
                 System.out.println(clients);
                 clientThread.start();
             }
